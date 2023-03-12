@@ -30,6 +30,12 @@ class TestWeatherApp(unittest.TestCase):
         output = format_output(weather_data)
         self.assertEqual(output, expected_output)
 
+     def test_format_output_invalid_data(self):
+        # Test with invalid weather data (i.e. error message)
+        weather_data = {'error': 'Invalid city name'}
+        expected_output = "Error: Invalid city name"
+        output = format_output(weather_data)
+        self.assertEqual(output, expected_output)
 
 if __name__ == "__main__":
     unittest.main()
